@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-forest px-5 py-2.5 text-[15px] font-medium text-white transition hover:bg-forestdeep hover:-translate-y-px;
+  }
+  .btn-lg {
+    @apply px-7 py-3.5 text-base;
+  }
+  .btn-light {
+    @apply bg-white text-forest hover:bg-[#f3efe2];
+  }
+  .btn-outline {
+    @apply bg-transparent text-forest border border-line hover:border-gold hover:bg-surfacewarm;
+  }
+  .ghost {
+    @apply text-[15px] font-medium text-forest hover:underline underline-offset-4;
+  }
+  .eyebrow {
+    @apply text-[13px] font-semibold uppercase tracking-[0.14em] text-gold;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-white;
+  }
+  .accent {
+    @apply italic text-gold;
+  }
+  .field {
+    @apply w-full rounded-xl border border-line bg-surfacewarm px-4 py-3 text-[15px] outline-none transition focus:border-forest;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+  .pill {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
