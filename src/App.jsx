@@ -1,4 +1,5 @@
 import { Routes, Route, Outlet } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
@@ -31,57 +32,60 @@ function Layout() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Landing />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/modules" element={<Curriculum />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+    <>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Landing />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/modules" element={<Curriculum />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/learn/:moduleSlug"
-          element={
-            <ProtectedRoute>
-              <ModuleView />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/learn/:moduleSlug/:topicSlug"
-          element={
-            <ProtectedRoute>
-              <Lesson />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/learn/:moduleSlug/:topicSlug/practice"
-          element={
-            <ProtectedRoute>
-              <Practice />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute adminOnly>
-              <Admin />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/learn/:moduleSlug"
+            element={
+              <ProtectedRoute>
+                <ModuleView />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/learn/:moduleSlug/:topicSlug"
+            element={
+              <ProtectedRoute>
+                <Lesson />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/learn/:moduleSlug/:topicSlug/practice"
+            element={
+              <ProtectedRoute>
+                <Practice />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute adminOnly>
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+      <Analytics />
+    </>
   );
 }
