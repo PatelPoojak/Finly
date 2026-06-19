@@ -102,6 +102,7 @@ export default function Nav() {
               <Link to="/dashboard" className="hover:text-forest">Dashboard</Link>
               <ModulesMenu signedIn />
               {isAdmin && <Link to="/admin" className="hover:text-forest">Impact</Link>}
+              <Link to="/donate" className="hover:text-forest">Donate</Link>
             </nav>
             <div className="ml-auto flex items-center gap-4">
               <span className="hidden items-center gap-1.5 text-sm font-medium text-forest sm:flex">
@@ -117,6 +118,7 @@ export default function Nav() {
               <HowItWorks />
               <ModulesMenu signedIn={false} />
               <Link to="/about" className="hover:text-forest">About</Link>
+              <Link to="/donate" className="hover:text-forest">Donate</Link>
             </nav>
             <div className="ml-auto flex items-center gap-4">
               <Link to="/login" className="ghost">Log in</Link>
