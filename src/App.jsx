@@ -39,7 +39,7 @@ export default function App() {
         <Route path="/modules" element={<Curriculum />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-
+        <Route path="/donate" element={<Donate />} />
         <Route
           path="/dashboard"
           element={
