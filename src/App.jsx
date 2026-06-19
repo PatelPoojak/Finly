@@ -7,6 +7,7 @@ import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Landing from "./pages/Landing.jsx";
 import About from "./pages/About.jsx";
 import Curriculum from "./pages/Curriculum.jsx";
+import Donate from "./pages/Donate.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
